@@ -1,0 +1,42 @@
+{% extends 'a_blog/base.html' %}
+
+{% block header %}
+<h1>Blogs</h1>
+{% endblock header %}
+
+{% block content %}
+
+
+<ul>
+{% for blog in blogs %}
+
+<li><h3><a href="{% url 'a_blog:blog' blog.id%}">{{blog}}</a></h3></li>
+
+{% empty %}
+<li>No topics have been added yet</li>
+
+{% endfor %}
+</ul>
+
+<h3><a href="{% url 'a_blog:new_blog' %}">add new blog</a></h3>
+
+
+
+
+<!--aliens blogs-->
+
+{{pub_blogs}}
+
+<ul>
+{% for pub_blog in pub_blogs %}
+
+<li><h3><a href="{% url 'a_blog:blog' pub_blog.id%}">{{pub_blog}}</a></h3></li>
+
+{% empty %}
+<li>No topics have been added yet</li>
+
+{% endfor %}
+</ul>
+
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'a_blog/base.html' %}
+
+{% block header %}
+<h2> {{ blog.title }}</h2>
+{%endblock header%}
+
+{% block content%}
+
+<p><a href="{% url 'a_blog:new_blog' %}">add new blog</a></p>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        
+        <h3>{{ blog.title }}</h3>
+        <h3><small>{{ blog.date_added|date:'d M, Y H:i' }}
+            <a href="{% url 'a_blog:edit_blog' blog.id%}">edit blog</a></small></h3>
+
+     </div>
+
+      <div class="panel-body">
+          {{ blog.text }}
+      </div>
+</div>
+
+
+
+{% endblock content%}

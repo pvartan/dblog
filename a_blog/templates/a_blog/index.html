@@ -1,0 +1,16 @@
+{% extends 'a_blog/base.html' %}
+
+{% block header %}
+<div class="jumbotron">
+    <h1>Post your thoughts</h1>
+    </div>
+    {% endblock header %}
+    
+
+
+{% block content  %}
+<h2>Blog board for short messages</h2>
+<h2><a href="{% url 'users:login' %}">Log in</a></h2>
+
+<a href="{% url 'a_blog:me'%}">time</a>
+{% endblock content  %}
